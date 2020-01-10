@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.petfinder.MainActivity;
 import com.petfinder.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -110,9 +112,11 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
+                /*loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                        passwordEditText.getText().toString());*/
+                Intent mainActivity = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(mainActivity);
             }
         });
     }
